@@ -1,0 +1,15 @@
+{% extends 'basic-style.html' %}
+
+{% block body %}
+    <div class="te_align_center" style="text-align: center">
+<h2 class="caa">查找单词中的元音字母</h2>
+<form method='POST' action='/search4'>
+		<p>使用这个操作来提交输入的内容</p>
+    <p>单词：</p><input name='phrase' type='TEXT' width='60' text-align="center">
+		<p>元音：</p><input name='letters' type='TEXT' value='aeiou'>
+	<p>输入完成后按这个按钮</p>
+	<p><input value='提交' type='SUBMIT'></p>
+</form>
+    </div>
+
+{% endblock %}

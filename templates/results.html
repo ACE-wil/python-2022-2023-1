@@ -1,0 +1,13 @@
+{% extends 'basic-style.html' %}
+{% block body %}
+    <div class="text_central" style="text-align: center" xmlns="http://www.w3.org/1999/html">
+<h2 class="caa">查找单词中的元音字母</h2>
+
+<p>你即将提交数据：</p>
+        <p>你输入的单词:</p><p class="cab">{{ the_phrase }}</p>
+	<p>元音字母:</p><p class="cab">{{ the_letters }}</p>
+
+<p>在 "{{ the_phrase }}" 中查找 "{{ the_letters }}",<h2 class="cac">找到啦!</h2></p>
+<h3>{{ the_results }}</h3>
+    </div>
+{% endblock %}

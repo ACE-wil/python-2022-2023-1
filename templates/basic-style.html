@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.104.2">
+    <title>阿杰的blog</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/">
+    <link href="https://getbootstrap.com/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<script>
+function playPause() {
+  var audio = document.getElementById("background-music");
+  if (audio.paused) {
+    audio.play();
+  } else {
+    audio.pause();
+  }
+}
+</script>
+<script src="../static/snow.js"></script>
+    <style>
+        body{background-color: #ed0839;}
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+        h3{color: white}
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .b-example-divider {
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+        }
+
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+        a {
+    color: #ff7b00;
+    text-decoration: underline;
+}
+        main{margin-top: 25px}
+        .rounded-image{height:100%;width: 100%}
+        h2{color: white}
+        .btn-secondary{background-color: orangered;--bs-btn-hover-bg: #d84108;--bs-btn-active-bg: #ca4d0a;}
+        p{color: white}
+        .btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #ffa000;
+    --bs-btn-border-color: #f58300;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #a30000;
+    --bs-btn-hover-border-color: #ff0000;
+    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #ca4d0a;
+    --bs-btn-active-border-color: #0a53be;
+    --bs-btn-active-shadow: inset 0 3px 5pxrgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #0d6efd;
+    --bs-btn-disabled-border-color: #0d6efd;
+}
+        br{color:white}
+       .text-muted {
+    --bs-text-opacity: 1;
+    color: #ffffff!important;
+}
+       .abb{background-color: gold;width: 360px;height: 100%;border-radius: 5px;margin-bottom: 5px}
+       .abbc{background-color: #ffa000;width: 170px;height: 100%;-webkit-border-radius: 20px;
+-moz-border-radius: 10px;
+border-radius: 10px}
+       .abbca{background-color: #ffa000;width: 280px;height: 100%;border-radius: 5px;margin-bottom: 5px;margin-left:390px}
+        .abbcac{background-color: #ffa000;width: 250px;height: 100%;border-radius: 5px;margin-bottom: 5px;margin-left:840px}
+        .aa{height: 140px;width: 140px}
+        .ab{height: 140px;width: 140px}
+        .ab:hover{transform: scale(2)}
+        .ac{height: 140px;width: 140px}
+        .ac:hover{
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+        @keyframes move {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+        .aa:hover{ animation: move 5s linear}
+        .ca{height: 500px;width: 500px}
+        .ca:hover{transform: scale(1.2)}
+        .cb:hover{transform: scale(1.2)}
+        .cc:hover{transform: scale(1.2)}
+        .cb{height: 500px;width: 500px}
+        .cc{height: 500px;width: 500px}
+        .caa{background-color: #f58300;width: 350px; width: 25%;
+  margin: 0 auto;border-radius: 10px}
+        .cab{background-color: #f58300;width: 10%;
+  margin: 0 auto;border-radius: 10px}
+        .cac{background-color: red;width: 8%;
+  margin: 0 auto;border-radius: 10px}
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="../static/carousel.css" rel="stylesheet">
+</head>
+<body>
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background: linear-gradient(to right, #ff0000, #ffff00);">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="../static/christmas-logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        阿杰的圣诞主题blog
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+              aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="http://127.0.0.1:5000/">主页</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">联系</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              圣诞主意
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">礼物</a>
+              <a class="dropdown-item" href="#">装饰</a>
+              <a class="dropdown-item" href="#">收据</a>
+            </div>
+          </li>
+        </ul>
+                  <button onclick="playPause()">播放/停止背景音乐</button>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="查找" aria-label="Search">
+          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">查找</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+                    aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+<div><img src="../static/a.png" class="rounded-image" alt="Image 1">
+                <div class="container">
+
+                    <div class="carousel-caption text-start">
+                        <h1 class="abbc">元音查询</h1>
+                        <div class="abb">如果你输入的内容有元音，小工具将会帮你找出来</div>
+                        <a class="btn btn-lg btn-primary" href="{{ url_for('entry_page') }}">查询</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+            <img src="../static/b.png" class="rounded-image" alt="Image2">
+
+                <div class="container">
+                    <div class="carousel-caption text-muted">
+                        <h1 class="abbca">购物车小项目</h1>
+                        <p>帮助你抢购限时秒杀的商品</p>
+                        <p><a class="btn btn-lg btn-primary" href="#">想要</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="../static/c.png" class="rounded-image" alt="Image3">
+                <div class="container">
+                    <div class="carousel-caption text-end">
+                        <h1 class="abbcac">圣诞节小游戏</h1>
+                        <p>万人同时在线，谁坚持到最后就能获得最终的精美小礼品</p>
+                        <p><a class="btn btn-lg btn-primary" href="#">内容为虚构，解释权归作者所有</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    {% block body %}
+    {% endblock %}
+    <footer class="container">
+        <p class="float-end"><a href="#">回到顶部</a></p>
+        <p>&copy; 2017–2022 使用版权. &middot; <a href="#">隐私条款</a> &middot; <a href="#">学期</a></p>
+    </footer>
+    <script src="https://getbootstrap.com/docs/5.2/dist/js/bootstrap.bundle.min.js"></script>
+</main>
+
+</body>
+<audio id="background-music" src="/static/christmas.mp3" autoplay loop></audio>
+</html>
